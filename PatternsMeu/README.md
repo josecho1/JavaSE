@@ -5,6 +5,11 @@ autor:Jose Luis Villaverde
 
 jlvbalsa@gmail.com
 
+- Composite Pattern
+
+- Strategy Pattern
+
+
 
 *****
 Copyright 2013 José Luis Villaverde Balsa.
