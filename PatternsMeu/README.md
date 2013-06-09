@@ -9,7 +9,7 @@ jlvbalsa@gmail.com
 
 - Strategy Pattern
 
-
+Files extension "dia" open with https://live.gnome.org/Dia
 
 *****
 Copyright 2013 José Luis Villaverde Balsa.
