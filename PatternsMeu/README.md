@@ -9,6 +9,10 @@ jlvbalsa@gmail.com
 
 - Strategy Pattern
 
+- Observer Pattern
+
+- Factory Pattern
+
 Files extension "dia" open with https://live.gnome.org/Dia
 
 *****
