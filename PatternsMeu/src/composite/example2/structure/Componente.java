@@ -20,7 +20,7 @@ This file is part of PatternsMeu.
 */
 package composite.example2.structure;
 
-
+/** "Component" */
 public abstract class Componente
 {
         protected String nombre;
@@ -28,8 +28,11 @@ public abstract class Componente
         {
                 this.nombre = nombre;
         }
+        //Adds the graphic to the composition.
         abstract public void agregar(Componente c);
+        //Removes the graphic from the composition.
         abstract public void eliminar(Componente c);
+        //Prints the graphic
         abstract public void mostrar(int profundidad);
 }
 

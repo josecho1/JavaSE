@@ -18,33 +18,20 @@ This file is part of PatternsMeu.
     You should have received a copy of the GNU General Public License
     along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 */
-package composite.example2.execute;
+package observer.example2.structure;
 
-import composite.example2.structure.*;
-/** Client */
-public class Client
-{
-	public static void main(String[] args)
-    {
-		//Initialize
-		Rama raiz = new Rama("root");
-		//Composes
-		raiz.agregar(new Hoja("hoja A"));
-		raiz.agregar(new Hoja("hoja B"));
-		
-		Rama comp = new Rama("rama X");
-		//Composes
-		comp.agregar(new Hoja("hoja XA"));
-		comp.agregar(new Hoja("hoja XB"));
-		raiz.agregar(comp);
-		raiz.agregar(new Hoja("hoja C"));
-		
-		Hoja l = new Hoja("hoja D");
-		//Composes
-		raiz.agregar(l);
-		//Delete
-		raiz.eliminar(l);
-		//Print
-		raiz.mostrar(1);
+import java.util.Observable;
+import java.util.Observer; //here
+
+public class EventReadLineHandler implements Observer{
+
+	private String response;
+	
+    public void update(Observable obj, Object arg) {
+        if (arg instanceof String) {
+            response = (String) arg;
+            System.out.println("\nReceived Response: " + response );
+        }
     }
+
 }

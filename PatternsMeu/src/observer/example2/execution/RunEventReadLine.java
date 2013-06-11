@@ -18,23 +18,33 @@ This file is part of PatternsMeu.
     You should have received a copy of the GNU General Public License
     along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 */
-package state.example1;
+package observer.example2.execution;
 
-public class Button {
+import observer.example2.structure.EventReadLine;
+import observer.example2.structure.EventReadLineHandler;
+
+public class RunEventReadLine {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 System.out.println("Enter Text >");
+		 
+	        // create an event source - reads from stdin
+	        final EventReadLine eventReadLine = new EventReadLine();
 	 
-	//The "current" state object  //   OFF     ON
-	private State current;
+	        // create an observer
+	        final EventReadLineHandler responseHandler = new EventReadLineHandler();
+	 
+	        // subscribe the observer to the event source
+	        eventReadLine.addObserver(responseHandler);
+	 
+	        // starts the event thread
+	        Thread thread = new Thread(eventReadLine);
+	        thread.start();
 
-	public Button(){
-		current = OFF.instance();
-	}
-	
-	public void setCurrent( State s ){
-		current = s;
 	}
 
-	//The "wrapper" always delegates to the "wrappee"
-	public void push(){
-		current.push( this );
-	}
-}	
+}

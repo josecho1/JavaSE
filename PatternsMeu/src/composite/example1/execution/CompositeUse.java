@@ -28,21 +28,21 @@ import composite.example1.structure.Node;
 
 public class CompositeUse {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		
-		Node root = new Node("root");
+		Node root = new Node("NodeRoot");
 	    root.add(new Leaf("Leaf1"));
-	    Node c2 = new Node("Node1");
-	    c2.add(new Leaf("Leaf2"));
-	    c2.add(new Leaf("Leaf3"));
-	    root.add(c2);
-	    c2 = new Node("Node2");
-	    c2.add(new Leaf("Leaf4"));
-	    c2.add(new Leaf("Leaf5"));
-	    root.add(c2);
+	    Node injert = new Node("NodePrimary");
+	    injert.add(new Leaf("Leaf2"));
+	    injert.add(new Leaf("Leaf3"));
+	    //first 
+	    root.add(injert);
+	    injert = new Node("NodeSecundary");
+	    injert.add(new Leaf("Leaf4"));
+	    injert.add(new Leaf("Leaf5"));
+	    //second
+	    root.add(injert);
+	    
 	    root.operation();
 
 	}

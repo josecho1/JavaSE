@@ -6,6 +6,7 @@ autor:Jose Luis Villaverde
 jlvbalsa@gmail.com
 
 - Composite Pattern
+http://www.lepus.org.uk/ref/companion/Composite.xml
 
 - Strategy Pattern
 
