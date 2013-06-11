@@ -1,4 +1,3 @@
-
 /*DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 
 Copyright 2013 José Luis Villaverde Balsa.
@@ -18,14 +17,34 @@ This file is part of PatternsMeu.
     You should have received a copy of the GNU General Public License
     along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 */
-package state.example1;
+package dao.example1.structure;
 
-public class State {
+public class Person {
 
-	//Default behavior can go in the base class
-	public void push( Button b )  {              
-	      b.setCurrent( OFF.instance() );
-	      System.out.println( "   turning OFF" );
-	  }
+	   private String name;
+	   private int id;
+
+	   Person(String name, int id){
+	      this.name = name;
+	      this.id = id;
+	   }
+
+	   public String getName() {
+	      return name;
+	   }
+
+	   public void setName(String name) {
+	      this.name = name;
+	   }
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	   
 
 }

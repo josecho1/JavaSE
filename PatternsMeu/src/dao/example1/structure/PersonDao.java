@@ -1,4 +1,3 @@
-
 /*DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 
 Copyright 2013 José Luis Villaverde Balsa.
@@ -18,23 +17,15 @@ This file is part of PatternsMeu.
     You should have received a copy of the GNU General Public License
     along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 */
-package state.example1;
+package dao.example1.structure;
 
-public class Button {
-	 
-	//The "current" state object  //   OFF     ON
-	private State current;
+import java.util.List;
 
-	public Button(){
-		current = OFF.instance();
-	}
+public interface PersonDao {
 	
-	public void setCurrent( State s ){
-		current = s;
-	}
+	public List<Person> getAllPersons();
+	public Person getPerson(int id);
+	public void updatePerson(Person person);
+	public void deletePerson(Person person);
 
-	//The "wrapper" always delegates to the "wrappee"
-	public void push(){
-		current.push( this );
-	}
-}	
+}

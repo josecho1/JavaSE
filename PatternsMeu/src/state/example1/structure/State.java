@@ -18,19 +18,14 @@ This file is part of PatternsMeu.
     You should have received a copy of the GNU General Public License
     along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 */
-package state.example1;
+package state.example1.structure;
 
-public class OFF extends State {
+public class State {
 
-	private static OFF inst = new OFF();
-	
-	private OFF() { }
-
-	public static State instance() { return inst; }
-	
-	public void push( Button b ) {
-		b.setCurrent( ON.instance() );
-		System.out.println( "   turning ON" ); 
-	}
+	//Default behavior can go in the base class
+	public void push( Button b )  {              
+	      b.setCurrent( OFF.instance() );
+	      System.out.println( "   turning OFF" );
+	  }
 
 }

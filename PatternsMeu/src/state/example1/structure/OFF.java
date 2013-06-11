@@ -18,22 +18,19 @@ This file is part of PatternsMeu.
     You should have received a copy of the GNU General Public License
     along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 */
-package state.example1;
+package state.example1.structure;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
+public class OFF extends State {
 
-public class OnOffState {
+	private static OFF inst = new OFF();
+	
+	private OFF() { }
 
-	public static void main( String[] args ) throws IOException {
-	      InputStreamReader is = new InputStreamReader( System.in );
-	      int ch;
-	      Button btn = new Button();
-	      while (true) {
-	         System.out.print( "Press 'Enter'" );
-	         ch = is.read();
-	         btn.push();
-	      }
-	   }
+	public static State instance() { return inst; }
+	
+	public void push( Button b ) {
+		b.setCurrent( ON.instance() );
+		System.out.println( "   turning ON" ); 
+	}
 
 }
