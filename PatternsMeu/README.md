@@ -19,17 +19,21 @@ http://www.lepus.org.uk/ref/companion/Composite.xml
 - Composite Pattern
 
 - Dao Pattern
-		LIB:
-			mysql-connector-java-5.1.17-bin.jar
-			hibernate-entitymanager-4.1.11.Final.jar
-			antlr-2.7.7.jar
-			dom4j-1.6.1.jar
-			hibernate-commons-annotations-4.0.1.Final.jar
-			hibernate-core-4.1.11.Final.jar
-			hibernate-jpa-2.0-api-1.0.1.Final.jar
-			javassist-3.15.0-GA.jar
-			jboss-logging-3.1.0.GA.jar
-			jboss-transaction-api_1.1_spec-1.0.0.Final.jar
+
+
+LIB:
+---
+				mysql-connector-java-5.1.17-bin.jar
+				hibernate-entitymanager-4.1.11.Final.jar
+				antlr-2.7.7.jar
+				dom4j-1.6.1.jar
+				hibernate-commons-annotations-4.0.1.Final.jar
+				hibernate-core-4.1.11.Final.jar
+				hibernate-jpa-2.0-api-1.0.1.Final.jar
+				javassist-3.15.0-GA.jar
+				jboss-logging-3.1.0.GA.jar
+				jboss-transaction-api_1.1_spec-1.0.0.Final.jar
+
 
 Files extension "dia" open with https://live.gnome.org/Dia
 
