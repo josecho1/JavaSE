@@ -6,7 +6,6 @@ autor:Jose Luis Villaverde
 jlvbalsa@gmail.com
 
 - Composite Pattern
-http://www.lepus.org.uk/ref/companion/Composite.xml
 
 - Strategy Pattern
 
@@ -19,6 +18,8 @@ http://www.lepus.org.uk/ref/companion/Composite.xml
 - Composite Pattern
 
 - Dao Pattern
+
+Files extension "dia" open with https://live.gnome.org/Dia
 
 
 LIB:
@@ -35,7 +36,6 @@ LIB:
 				jboss-transaction-api_1.1_spec-1.0.0.Final.jar
 
 
-Files extension "dia" open with https://live.gnome.org/Dia
 
 *****
 Copyright 2013 José Luis Villaverde Balsa.
