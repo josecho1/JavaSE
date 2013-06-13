@@ -17,36 +17,31 @@ This file is part of PatternsMeu.
     You should have received a copy of the GNU General Public License
     along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 */
-package dao.example1.execute;
+package dao.example3.daojpa.dao;
 
-import dao.example1.structure.Person;
-import dao.example1.structure.PersonDao;
-import dao.example1.structure.PersonDaoImpl;
+import java.util.List;
+import java.io.Serializable;
 
-public class PersonDaoDemo {
-	
-	public static void main(String[] args) {
+/**
+ * An interface shared by all business data access objects.
+ * <p>
+ * All CRUD (create, read, update, delete) basic data access operations are
+ * isolated in this interface and shared accross all DAO implementations.
+ * The current design is for a state-management oriented persistence layer
+ * (for example, there is no UDPATE statement function) that provides
+ * automatic transactional dirty checking of business objects in persistent
+ * state.
+ *
+ * @author Jose Luis Villaverde
+ */
+public interface GenericDAO<T, ID extends Serializable> {
 
-		PersonDao personDao = new PersonDaoImpl();
+	T findById(ID id);
 
-		//print all persons
-		for (Person person : personDao.getAllPersons()) {
-			System.out.println("Person: [Id : "
-		    +person.getId()+", Name : "+person.getName()+" ]");
-		}
-		
-		
-		//update person
-		Person person =personDao.getAllPersons().get(0);
-		person.setName("Rosa");
-		personDao.updatePerson(person);
-		
-		//get the person
-		personDao.getPerson(0);
-		System.out.println("Person: [Id : "
-				+person.getId()+", Name : "+person.getName()+" ]");		
-		}
+    List<T> findAll();
+
+    T makePersistent(T entity);
+
+    void makeTransient(T entity);
 
 }
-
-

@@ -17,7 +17,7 @@ jlvbalsa@gmail.com
 
 - Composite Pattern
 
-- Dao Pattern
+- Dao Pattern (Examples: DAO, DAO+JPA)
 
 Files extension "dia" open with https://live.gnome.org/Dia
 
@@ -34,6 +34,8 @@ LIB:
 				javassist-3.15.0-GA.jar
 				jboss-logging-3.1.0.GA.jar
 				jboss-transaction-api_1.1_spec-1.0.0.Final.jar
+				jboss-ejb3-all.jar
+				
 
 
 

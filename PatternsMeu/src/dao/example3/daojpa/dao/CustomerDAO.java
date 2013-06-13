@@ -17,36 +17,16 @@ This file is part of PatternsMeu.
     You should have received a copy of the GNU General Public License
     along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 */
-package dao.example1.execute;
+package dao.example3.daojpa.dao;
 
-import dao.example1.structure.Person;
-import dao.example1.structure.PersonDao;
-import dao.example1.structure.PersonDaoImpl;
+import dao.example3.daojpa.model.Customer;
 
-public class PersonDaoDemo {
-	
-	public static void main(String[] args) {
+/**
+ * Business DAO operations related to the <tt>Customer</tt> entity.
+ *
+ * @autor José Luis Villaverde
+ */
 
-		PersonDao personDao = new PersonDaoImpl();
-
-		//print all persons
-		for (Person person : personDao.getAllPersons()) {
-			System.out.println("Person: [Id : "
-		    +person.getId()+", Name : "+person.getName()+" ]");
-		}
-		
-		
-		//update person
-		Person person =personDao.getAllPersons().get(0);
-		person.setName("Rosa");
-		personDao.updatePerson(person);
-		
-		//get the person
-		personDao.getPerson(0);
-		System.out.println("Person: [Id : "
-				+person.getId()+", Name : "+person.getName()+" ]");		
-		}
+public interface CustomerDAO extends GenericDAO<Customer, Long> {
 
 }
-
-

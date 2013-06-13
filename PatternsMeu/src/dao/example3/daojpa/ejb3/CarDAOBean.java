@@ -17,36 +17,38 @@ This file is part of PatternsMeu.
     You should have received a copy of the GNU General Public License
     along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 */
-package dao.example1.execute;
+package dao.example3.daojpa.ejb3;
 
-import dao.example1.structure.Person;
-import dao.example1.structure.PersonDao;
-import dao.example1.structure.PersonDaoImpl;
+import java.util.List;
+import javax.ejb.Stateless;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
+import dao.example3.daojpa.dao.CarDAO;
+import dao.example3.daojpa.model.Car;
 
-public class PersonDaoDemo {
+/**
+ * EJB3-specific implementation of the <tt>UserDataAccess</tt> non-CRUD data access object.
+ *
+ * @author José Luis Villaverde
+ */
+@Stateless
+@TransactionAttribute(TransactionAttributeType.REQUIRED)
+public class CarDAOBean extends GenericEJB3DAO<Car, Long> implements CarDAO{
 	
-	public static void main(String[] args) {
-
-		PersonDao personDao = new PersonDaoImpl();
-
-		//print all persons
-		for (Person person : personDao.getAllPersons()) {
-			System.out.println("Person: [Id : "
-		    +person.getId()+", Name : "+person.getName()+" ]");
-		}
-		
-		
-		//update person
-		Person person =personDao.getAllPersons().get(0);
-		person.setName("Rosa");
-		personDao.updatePerson(person);
-		
-		//get the person
-		personDao.getPerson(0);
-		System.out.println("Person: [Id : "
-				+person.getId()+", Name : "+person.getName()+" ]");		
-		}
+	public List<Car> getAllCars() {
+		return findAll();
+	}
+	
+	public Car getCar(long id) {
+		return findById(id);
+	}
+	
+	public void updateCar(Car car) {
+		makePersistent(car);
+	}
+	
+	public void deleteCar(Car car) {
+		makeTransient(car);
+	}
 
 }
-
-
