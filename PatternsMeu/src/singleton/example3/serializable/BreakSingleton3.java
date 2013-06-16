@@ -1,3 +1,6 @@
+// Extract of http://www.javacodegeeks.com/2013/06/singleton-design-pattern-a-lions-eye-view.html
+//Java Code Geeks content is offered under Creative Commons Attribution-ShareAlike 3.0 Unported License.
+
 package singleton.example3.serializable;
 
 import java.io.Serializable;
