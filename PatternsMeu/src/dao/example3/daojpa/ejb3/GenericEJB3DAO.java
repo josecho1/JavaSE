@@ -45,6 +45,7 @@ public abstract class GenericEJB3DAO<T,ID extends Serializable>
 
     private EntityManager em;
 
+    
     public GenericEJB3DAO() {
         this.entityBeanType = (Class<T>) ((ParameterizedType) getClass()
                                 .getGenericSuperclass()).getActualTypeArguments()[0];
@@ -59,15 +60,21 @@ public abstract class GenericEJB3DAO<T,ID extends Serializable>
         this.em = em;
     }
 
+    //The entityManager and entityBeanType fields are protected so that subclasses, i.e. specific GenericDAO implementations,
+    // can access them.
     protected EntityManager getEntityManager() {
         if (em == null)
             throw new IllegalStateException("EntityManager has not been set on DAO before usage");
         return em;
     }
 
-    public Class<T> getEntityBeanType() {
+    protected Class<T> getEntityBeanType() {
         return entityBeanType;
     }
+    
+    /*public Class<T> getEntityBeanType() {
+        return entityBeanType;
+    }*/
 
         
     public T findById(ID id) {

@@ -19,6 +19,8 @@ jlvbalsa@gmail.com
 
 - Dao Pattern (Examples: DAO, DAO+JPA)
 
+- Singleton Pattern
+
 Files extension "dia" open with https://live.gnome.org/Dia
 
 
