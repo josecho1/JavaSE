@@ -20,6 +20,9 @@ This file is part of PatternsMeu.
 */
 package composite.example1.structure;
 
+/** 
+     @autor: Jose Luis Villaverde
+*/
 public interface Component {
 	void operation();
 

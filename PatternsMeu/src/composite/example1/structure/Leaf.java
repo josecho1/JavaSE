@@ -20,7 +20,9 @@ This file is part of PatternsMeu.
 */
 package composite.example1.structure;
 
-
+/** 
+     @autor: Jose Luis Villaverde
+*/
 public class Leaf implements Component {
 	
 	 private String name;

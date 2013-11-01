@@ -24,7 +24,9 @@ package composite.example1.structure;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-
+/** 
+     @autor: Jose Luis Villaverde
+*/
 public class Node extends ArrayList<Component> implements Component {
 
 	private static final long serialVersionUID = 1L;
